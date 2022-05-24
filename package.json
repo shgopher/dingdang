@@ -1,0 +1,33 @@
+{
+  "name": "dingdang",
+  "version": "v1.0.0",
+  "description": "一本工具大全，包括git，ddd，okr devOps 等众多技术",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "vuepress dev .",
+    "build": "vuepress build .",
+    "export": "vuepress export ."
+  },
+  "repository": "git+https://github.com/shgopher/dingdang.git",
+  "author": "shgopher@qq.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shgopher/dingdang/issues"
+  },
+  "homepage": "https://github.com/shgopher/dingdang#readme",
+  "devDependencies": {
+    "@vuepress/plugin-back-to-top": "^1.4.0",
+    "@vuepress/plugin-google-analytics": "^1.4.0",
+    "@vuepress/plugin-nprogress": "^1.9.7",
+    "github-buttons": "^2.13.0",
+    "moment": "^2.24.0",
+    "puppeteer": "^1.11.0",
+    "vuepress": "^1.4.0",
+    "vuepress-plugin-baidu-autopush": "^1.0.1",
+    "vuepress-plugin-comment": "^0.7.3"
+  },
+  "dependencies": {
+    "vuepress-plugin-baidu-tongji-analytics": "^1.0.2"
+  }
+}
