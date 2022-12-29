@@ -124,7 +124,48 @@ module.exports = {
       {
         title: 'git',
         collapsable: false,
-        children: [],
+        children: [
+          {
+            title: 'git的基本概念',
+            path: '/git/基本概念/',
+            collapsable: false,
+          },
+          {
+            title: 'git的基本配置',
+            path: '/git/基本配置/',
+            collapsable: false,
+          },
+          {
+            title: 'git的基本操作',
+            path: '/git/基本操作/',
+            collapsable: false,
+          },
+          {
+            title: 'git的多人合作模式',
+            path: '/git/多人合作模式/',
+            collapsable: false,
+          },
+          {
+            title: 'git的突发状况处理',
+            path: '/git/突发状况处理/',
+            collapsable: false,
+          },
+          {
+            title: 'git的错误处理',
+            path: '/git/错误处理/',
+            collapsable: false,
+          },
+          {
+            title: 'github的使用',
+            path: '/git/github/',
+            collapsable: false,
+          },
+          {
+            title: 'gitlab的使用',
+            path: '/git/gitlab/',
+            collapsable: false,
+          }
+        ],
       },
       {
         title: 'devOps',
