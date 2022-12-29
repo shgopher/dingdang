@@ -14,34 +14,45 @@ hey~，我是科科人神，目前就职于国内一家互联网公司，你们�
 </p>
 添加微信公众号：<a href="#wechat.png">科科人神</a>, 回复：
 
-- `思维导图`, 获取作者总结的超详细的找工作面试秘籍，知识超级全面，并且以思维导图的方式更容易多维立体记忆。
 - `面试题`, 获取经典go面试大全。
 - `好友`, 可以添加作者的微信好友
 
 
 ![](./dingdang.png)                             
+                              
+## Git
+## devOps
+## 正则表达式
+## ddd
+## okr
+## auth
+## 重构技术
+## 性能优化技术
+## debug技术
+## 线上快速排障
+## 测试
+## 视频教程
+- [x] [《go语言从入门到实践》](https://github.com/shgopher/bestGO)
 ## 系列教程
-- [GOFamily](https://github.com/shgopher/GOFamily/) 一本为go后端程序员打造的教程
-- [408](https://github.com/shgopher/408/) 一本主要以408知识为主的基础课程
-- [luban](https://github.com/shgopher/luban/) 一本用鲁班的名字命名，主要讲解系统设计的书籍
-- [dingdang](https://github.com/shgopher/dingdang/) 叮当，是一本讲解各种工具的书
-- [god](https://github.com/shgopher/god/) 给程序员写的教程，主要关于学习，副业，买房，面试等内容，程序员才是真神！
-## 推荐项目
-- [hui](https://github.com/shgopher/hui) 一个简洁好用效率高的web框架
-- [key](https://github.com/shgopher/key) 一个服务授权系统
-- [go-short](https://github.com/shgopher/go-short) 一个超级好用的短链接服务
-- [ka](https://github.com/shgopher/ka) 一个效率非常高的秒杀服务                               
-## [git](./git)
-## [devOps](./devOps)
-## [正则表达式](./正则表达式)
-## [ddd](./ddd)
-## [okr](./okr)
-## [auth](./auth)
-## [重构技术](./重构技术)
-## [性能优化技术](./性能优化技术)
-## [debug技术](./debug)
-## [线上快速排障](./线上快速排障)
-## [测试](./测试)
+- [x] [GOFamily](https://github.com/shgopher/GOFamily/) 一本为go后端程序员打造的教程
+- [ ] [408](https://github.com/shgopher/408/) 一本主要以408知识为主的基础课程
+- [ ] [luban](https://github.com/shgopher/luban/) 一本用鲁班的名字命名，主要讲解系统设计的书籍
+- [x] [dingdang](https://github.com/shgopher/dingdang/) 叮当，是一本讲解各种工具的书
+- [ ] [god](https://github.com/shgopher/god/) 给程序员写的教程，主要关于学习，副业，买房，面试等内容，程序员才是真神！
+## 作者写的项目
+- [ ] [hui](https://github.com/shgopher/hui) 一个简洁好用效率高的web框架
+- [ ] [zhongli](https://github.com/shgopher/zhongli) 一个高效易用的 rpc 框架
+- [ ] [yelan](https://github.com/shgopher/yelan) 一个利用k8s基本原理去写的区块链服务
+- [ ] [retuo](https://github.com/shgopher/retuo) 一个分布式爬虫服务
+- [ ] [ka](https://github.com/shgopher/ka) 一个效率非常高的秒杀服务
+- [ ] [key](https://github.com/shgopher/key) 一个微服务架构的服务授权系统
+- [x] [short](https://github.com/shgopher/short) 一个简单的短链接服务
+- [ ] [go-short](https://github.com/shgopher/go-short) 一个微服务架构的短链接服务
+
+## 参考资料
+- [玩转 Git 三剑客](https://time.geekbang.org/course/intro/100021601)
+- [Go 语言项目开发实战](https://time.geekbang.org/column/article/390401?cid=100079601)
+
 ## 扫一扫添加我的公众号，回复 “加群”，可以加入微信群。
 
 <p id="wechat.png" align="center">
