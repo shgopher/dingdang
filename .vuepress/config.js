@@ -146,13 +146,8 @@ module.exports = {
             collapsable: false,
           },
           {
-            title: 'git的突发状况处理',
-            path: '/git/突发状况处理/',
-            collapsable: false,
-          },
-          {
-            title: 'git的错误处理',
-            path: '/git/错误处理/',
+            title: '实际应用',
+            path: '/git/实际应用/',
             collapsable: false,
           },
           {
