@@ -9,7 +9,7 @@
 git的配置信息存储在三个位置，分别是
 - /etc/gitconfig ：系统级的配置文件，如果使用 git config --system 就会写入到这个目录下
 - ～/.gitconfig ：当前用户下的配置文件，git config --global 命令就会写入到这个目录下
-- 当前git仓库中的 .git/config ：只针对于当前仓库有效
+- 当前git仓库中的 .git/config ：只针对于当前仓库有效, git config --local 这样即可。
 
 每一个级别都会覆盖上一级别的配置，也就是说 .git/config 的优先级最高。
 
