@@ -41,6 +41,8 @@ hey~，我是科科人神，目前就职于国内一家互联网公司，你们�
 ## debug技术
 ## 线上快速排障
 ## 测试
+## 小工具
+- [代码统计工具 cloc](./small/cloc)
 ## 视频教程
 - [x] [《go语言从入门到实践》](https://github.com/shgopher/bestGO)
 ## 系列教程
