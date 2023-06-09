@@ -2,7 +2,7 @@
  * @Author: shgopher shgopher@gmail.com
  * @Date: 2022-12-29 23:11:24
  * @LastEditors: shgopher shgopher@gmail.com
- * @LastEditTime: 2023-05-07 01:59:13
+ * @LastEditTime: 2023-06-07 19:38:07
  * @FilePath: /dingdang/README.md
  * @Description: 
  * 
@@ -42,9 +42,10 @@ hey~，我是科科人神，目前就职于国内一家互联网公司，你们�
 - [gitlab的使用](./git/gitlab)
 - [git的底层原理](./git/底层原理)
 - [git的实际应用](./git/实际应用)
+## Makefile
+- [Makfile的基本概念](./makefile/基本概念/README.md)
 ## 正则表达式
 ## devOps
-## ddd
 ## okr
 ## auth
 ## 重构技术
