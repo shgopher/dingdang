@@ -8,7 +8,7 @@
  * 
  * Copyright (c) 2023 by shgopher, All Rights Reserved. 
 -->
-# git的多人合作模式
+# git 的多人合作模式
 
 ## 参考资料
 - https://git-scm.com/book/zh/v2

@@ -1,17 +1,17 @@
 # git 的基本操作
-## 建立一个git仓库
-### 将一个尚未配置git的本地目录转化为git仓库：
+## 建立一个 git 仓库
+### 将一个尚未配置 git 的本地目录转化为 git 仓库：
 ```bash
 git init
 ```
-这个时候，会建立一个.git 的目录，注意这个时候目录下的文件并没有被追踪，你需要完成，add commit 这两个命令之后才能跟踪文件：
+这个时候，会建立一个。git 的目录，注意这个时候目录下的文件并没有被追踪，你需要完成，add commit 这两个命令之后才能跟踪文件：
 ```bash
 git add *.go
 git add LICENSE
 git commit -m "feat(go): add all go files"
 ```
 ### 克隆现有的仓库
-通常来说，你会使用 `git clone`命令来克隆远程的服务，git clone的时候，会将远程的全部数据下载过来放入本地的.git中，然后从中读取最新版，生成最新的文件等待后续的开发工作。
+通常来说，你会使用 `git clone` 命令来克隆远程的服务，git clone 的时候，会将远程的全部数据下载过来放入本地的。git 中，然后从中读取最新版，生成最新的文件等待后续的开发工作。
 
 注意默认情况下是克隆所有版本的文件，如果你只想克隆某个版本的文件，可以设置克隆的层级以及克隆的分支。
 ```bash
@@ -29,11 +29,11 @@ git clone --depth=1 -b=main https://github.com/shgopher/dingdang
 # 重命名路径名称 
 git clone https://github.com/shgopher/dingdang dd 
 ```
-更多用法可以使用 `git clone --help`去查看一下详解。
+更多用法可以使用 `git clone --help` 去查看一下详解。
 
 ## 记录每次更新到仓库
 
-git工作目录下的文件拥有两种状态，已跟踪和未跟踪，已跟踪意味着，git对它进行了跟踪记录，在上一次的快照中有它的记录，它本身的状态可能是未修改，已修改，或者已经放入暂存区域。未跟踪的文件，不存在于上次的快照记录中，也没有放入暂存区域，如果你是克隆的某个项目，那么路径下的所有文件都处于已跟踪的状态，它们处于的状态是未修改的状态，因为git刚刚才检测出它们。
+git 工作目录下的文件拥有两种状态，已跟踪和未跟踪，已跟踪意味着，git 对它进行了跟踪记录，在上一次的快照中有它的记录，它本身的状态可能是未修改，已修改，或者已经放入暂存区域。未跟踪的文件，不存在于上次的快照记录中，也没有放入暂存区域，如果你是克隆的某个项目，那么路径下的所有文件都处于已跟踪的状态，它们处于的状态是未修改的状态，因为 git 刚刚才检测出它们。
 
 下面有一张图：
 
@@ -45,14 +45,14 @@ git工作目录下的文件拥有两种状态，已跟踪和未跟踪，已跟�
 
 - 我们将没有跟踪的文件，跟踪它，然后将它放入到了暂存区域，暂存区域就会在下次提交的时候提交它们，并将它们的状态改为未被修改的。
 - 未被修改的文件，当我们编辑了它们以后，就会将状态改为已被修改的，然后已被修改的文件又会被放入到暂存区域改为状态是已经暂存的，然后提交以后，状态被修改为未被修改的
-- 其中放入暂存区域，将状态修改为已经暂存的，命令是 `git add` ，将已经暂存的提交，状态改为未被修改的，这个命令是 `git commit` ，git会自动记录文件是否修改，也就是说从 unmodified 的编辑过程，状态改为modified这个过程，是git自动记录的。
-- 将未被修改的文件 remove 删除的时候，就会将这个文件的状态从未被修改的变为未被追踪的，也就是说，这个文件在删除之后，git系统就不再跟踪这个文件了。
+- 其中放入暂存区域，将状态修改为已经暂存的，命令是 `git add`，将已经暂存的提交，状态改为未被修改的，这个命令是 `git commit`，git 会自动记录文件是否修改，也就是说从 unmodified 的编辑过程，状态改为 modified 这个过程，是 git 自动记录的。
+- 将未被修改的文件 remove 删除的时候，就会将这个文件的状态从未被修改的变为未被追踪的，也就是说，这个文件在删除之后，git 系统就不再跟踪这个文件了。
 
 
 ### 跟踪新的文件
 使用 `git status` 去查看文件的状态。
 
-显示是否含有未跟踪的文件，是否有出于暂存区域的文件,例如：
+显示是否含有未跟踪的文件，是否有出于暂存区域的文件，例如：
 ```bash
 On branch master
 Your branch is up to date with 'origin/master'.
@@ -67,11 +67,11 @@ Changes not staged for commit:
 	modified:   pkg/shutdown/shutdown.go
 	modified:   tools/codegen/codegen.go
 ```
-- 第一行指出，这是一个master的分支
-- 第二行显示 ，这个分支同远程服务器上对应的分支没有偏离
+- 第一行指出，这是一个 master 的分支
+- 第二行显示，这个分支同远程服务器上对应的分支没有偏离
 - 下面的内容表示，有修改的文件没有被放入暂存区域。需要使用 `git add` 命令
 
-我们在项目中新建一个文件，`main.go` 由于之前并不存在这个文件，之前的快照里没有它，所以它的状态就是 untracked 
+我们在项目中新建一个文件，`main.go` 由于之前并不存在这个文件，之前的快照里没有它，所以它的状态就是 untracked
 ```bash
 Untracked files:
   (use "git add <file>..." to include in what will be committed)
@@ -79,7 +79,7 @@ Untracked files:
     test.md
 ```
 
-说明 test.md 并没有被git跟踪，git并不会自动的去跟踪文件，需要手动的说明一下git才会跟踪这个文件，我们使用 `git add test.md` 这个命令就可以完成跟踪
+说明 test.md 并没有被 git 跟踪，git 并不会自动的去跟踪文件，需要手动的说明一下 git 才会跟踪这个文件，我们使用 `git add test.md` 这个命令就可以完成跟踪
 
 ```bash
 Changes to be committed:
@@ -87,9 +87,9 @@ Changes to be committed:
 	new file:   test.md
 ```
 
-我们可以看到，使用了 `git add` 之后，出现了 `new file` 的说明，我们看上面的图就知道，这个文件已经被放入了暂存区域了，我们只需要再 `git commit` 一下 就可以完成跟踪这个流程了。
+我们可以看到，使用了 `git add` 之后，出现了 `new file` 的说明，我们看上面的图就知道，这个文件已经被放入了暂存区域了，我们只需要再 `git commit` 一下就可以完成跟踪这个流程了。
 
-通过这个演示我们发现，跟踪文件，和修改文件都需要放入暂存区域，而放入暂存区域的这个命令都是 `git add` 不管是跟踪未被暂存的文件还是要修改的文件都是 `git add` 这一个命令。而从暂存区域然后提交数据到git中命令就是 `git commit` 这一个命令的，`git commit` 的命令是一个含义，但是git add 这一个命令是干了两件事儿的，通过刚才的解释，以及上面的图就可以理解了。不仅如此 `git add` 还能在合并冲突的时候，在修改过的文件后使用，意思是冲突文件的状态改为已经解决冲突，并提交到暂存区域，所以总结一下，git add 的意思可以理解为，**将文件添加到暂存区域，也就是添加到下一次的提交中。** 
+通过这个演示我们发现，跟踪文件，和修改文件都需要放入暂存区域，而放入暂存区域的这个命令都是 `git add` 不管是跟踪未被暂存的文件还是要修改的文件都是 `git add` 这一个命令。而从暂存区域然后提交数据到 git 中命令就是 `git commit` 这一个命令的，`git commit` 的命令是一个含义，但是 git add 这一个命令是干了两件事儿的，通过刚才的解释，以及上面的图就可以理解了。不仅如此 `git add` 还能在合并冲突的时候，在修改过的文件后使用，意思是冲突文件的状态改为已经解决冲突，并提交到暂存区域，所以总结一下，git add 的意思可以理解为，**将文件添加到暂存区域，也就是添加到下一次的提交中。** 
 
 `git add` 后面跟文件或者是路径，如果是路径那么将递归的将路径下的所有文件递归的找到并且添加到暂存区域。
 ```bash
@@ -97,7 +97,7 @@ git add .
 ```
 意思就是将这个路径下的，以及包含所有的子路径的所有文件，都添加到暂存区域。
 
-文件是可以同时出现在 暂存区和已修改区域这两个状态中的，其实很好理解，比如一个文件，你add之后存在于暂存区域了，这个时候你又进行了一次修改，那么当你还没有add的时候，它就会同时出现在暂存区域和已修改中，这个时候是可以commit的，只不过commit的是第一次修改以后的数据，如果想把第二次的修改也commit，就需要再次add。
+文件是可以同时出现在暂存区和已修改区域这两个状态中的，其实很好理解，比如一个文件，你 add 之后存在于暂存区域了，这个时候你又进行了一次修改，那么当你还没有 add 的时候，它就会同时出现在暂存区域和已修改中，这个时候是可以 commit 的，只不过 commit 的是第一次修改以后的数据，如果想把第二次的修改也 commit，就需要再次 add。
 
 ```bash
 Changes to be committed:
@@ -112,7 +112,7 @@ Changes not staged for commit:
 
     modified:   CONTRIBUTING.md
 ```
-我们两次add之后
+我们两次 add 之后
 ```bash
 Changes to be committed:
   (use "git reset HEAD <file>..." to unstage)
@@ -135,32 +135,32 @@ A  test.md
  M tools/codegen/codegen.go
 ?? LICENSE.txt
 ``` 
-- ?? :表示未被跟踪的文件
-- A : 表示从未被跟踪状态新添加到暂存区的文件
-- 带有空格的M : 表示修改后的文件还没放入暂存区
-- 顶头写的M: 表示已修改的文件并且放入了暂存区域
-- 顶头写的MM:表示已修改的文件并且放入了暂存区域，但是又修改了还没有add 的时候的标记
+- ?? ：表示未被跟踪的文件
+- A：表示从未被跟踪状态新添加到暂存区的文件
+- 带有空格的 M：表示修改后的文件还没放入暂存区
+- 顶头写的 M：表示已修改的文件并且放入了暂存区域
+- 顶头写的 MM：表示已修改的文件并且放入了暂存区域，但是又修改了还没有 add 的时候的标记
 
-### 介绍 .gitignore
-当我们想某些文件不让git跟踪的时候，并且也不想让它们出现在未跟踪这个目录下，而且有的时候我们会使用`git add .` 这种全局add，所以使用.gitignore 这种可以忽略跟踪的命令就很有必要了。
+### 介绍。gitignore
+当我们想某些文件不让 git 跟踪的时候，并且也不想让它们出现在未跟踪这个目录下，而且有的时候我们会使用 `git add .` 这种全局 add，所以使用。gitignore 这种可以忽略跟踪的命令就很有必要了。
 
-在项目的根目录下新建一个.gitignore文件，比如：
+在项目的根目录下新建一个。gitignore 文件，比如：
 ```bash
 .idea
 *.txt
 node_modules/
 ```
 以下是规则：
-- 使用 `#` 作为`.gitignore`的注释
-- 可以使用glob模式的正则表达式（shell使用的简化过的正则）
-  - `*` 匹配0个或者多个任意的字符
+- 使用 `#` 作为 `.gitignore` 的注释
+- 可以使用 glob 模式的正则表达式 (shell 使用的简化过的正则)
+  - `*` 匹配 0 个或者多个任意的字符
   - `[abc]` 匹配任何**一个**列在括号里的字符
   - `?` 只匹配一个任意字符
   - `[0-9]` 方括号中的短线表示范围
-  - `**` 两个星号表示匹配任意中间目录，`a/**/z` 匹配 `a/z` `a/n/d/z` 
-- 以 `/` 开头防止递归 ，比如 `/file` 表示只忽略当前目录下的 file文件，而不会向下递归，忽略 `/a/file`
-- 以`/` 结尾，表示目录，而不是目录+文件
-- `!` 表示取反，比如 `!name/` 表示除了name之外的目录都要忽略
+  - `**` 两个星号表示匹配任意中间目录，`a/**/z` 匹配 `a/z` `a/n/d/z`
+- 以 `/` 开头防止递归，比如 `/file` 表示只忽略当前目录下的 file 文件，而不会向下递归，忽略 `/a/file`
+- 以 `/` 结尾，表示目录，而不是目录+文件
+- `!` 表示取反，比如 `!name/` 表示除了 name 之外的目录都要忽略
 
 下面给出一个具体的例子
 
@@ -196,9 +196,9 @@ doc/*.txt
 # 忽略 doc/ 目录及其所有子目录下的 .pdf 文件
 doc/**/*.pdf
 ```
-GitHub上有一个推荐使用的 [.gitignore](https://github.com/github/gitignore) 可以看一下
+GitHub 上有一个推荐使用的[。gitignore](https://github.com/github/gitignore) 可以看一下
 
-比如go的：
+比如 go 的：
 ```bash
 # If you prefer the allow list template instead of the deny list, see community template:
 # https://github.com/github/gitignore/blob/main/community/Golang/Go.AllowList.gitignore
@@ -223,21 +223,21 @@ GitHub上有一个推荐使用的 [.gitignore](https://github.com/github/gitigno
 go.work
 ```
 
-.gitignore 在一个项目中也是可以有很多个的，根目录有一个，在各个子目录下也可以有，子目录下的优先级更高。
+。gitignore 在一个项目中也是可以有很多个的，根目录有一个，在各个子目录下也可以有，子目录下的优先级更高。
 
 ### 查看已暂存和未暂存的修改
-我们使用git status 可以查看目前的状态，但是内容过于简洁，比如只能看某个文件是什么状态，位于未追踪的状态，已经修改但是并未提交的暂存区的状态，将要提交的状态等，只能看到文件的状态，如果要看到更加详细的状态，我们可以使用 git diff
+我们使用 git status 可以查看目前的状态，但是内容过于简洁，比如只能看某个文件是什么状态，位于未追踪的状态，已经修改但是并未提交的暂存区的状态，将要提交的状态等，只能看到文件的状态，如果要看到更加详细的状态，我们可以使用 git diff
 
-git diff 这个命令比较的是工作目录当前文件和暂存区域快照之间的差异，也就是说，修改了的和暂存区的差别，**从命令上来说就是git add 之前和之后的差异。**
+git diff 这个命令比较的是工作目录当前文件和暂存区域快照之间的差异，也就是说，修改了的和暂存区的差别，**从命令上来说就是 git add 之前和之后的差异。**
 
 如果要看的差异是已暂存和已提交的差异，那么可以使用 `git diff --staged` 这个命令比较的就是 `git commit ` 前后的差异
 
-这里推荐一些工作来查看git diff ，毕竟工具更加直观，比如使用 vs code这个编辑器，就可以直接显示 git diff ，非常的直观。
+这里推荐一些工作来查看 git diff，毕竟工具更加直观，比如使用 vs code 这个编辑器，就可以直接显示 git diff，非常的直观。
 
 ### 提交更新
-将暂存区域的数据提交到 .git 中，使用`git commit`,如果使用`git commit -m ""` 那么就会直接提交 `-m` 后面的内容到提交记录中，如果没有`-m` 那么系统就会调用默认的编辑器来填写内容，我们可以使用 `git config --global core.editor`来设置这个编辑器，通常默认的是vim
+将暂存区域的数据提交到。git 中，使用 `git commit`，如果使用 `git commit -m ""` 那么就会直接提交 `-m` 后面的内容到提交记录中，如果没有 `-m` 那么系统就会调用默认的编辑器来填写内容，我们可以使用 `git config --global core.editor` 来设置这个编辑器，通常默认的是 vim
 
-一般的提交过程会在注释里写入最后一次的git status
+一般的提交过程会在注释里写入最后一次的 git status
 ```bash
 # Please enter the commit message for your changes. Lines starting
 # with '#' will be ignored, and an empty message aborts the commit.
@@ -264,7 +264,7 @@ feat(git):add some messages
 ```
 注释最好保留下来，最后输入信息即可
 
-如果想保留的不是git status 而是 git diff 可以这么做：`git commit -v` 
+如果想保留的不是 git status 而是 git diff 可以这么做：`git commit -v`
 ```bash
 +url
 +!url/
@@ -336,7 +336,7 @@ feat(git):add some messages
 
 
 ```
-可以看到非常的详细，当然日常的话 使用`git commit -m ""` 确实挺快的，如果你觉得麻烦的话，可以使用git cz 它是一个给git commit 提供的工具，它提供了一个模版，可以在命令行输入信息，按照它的提示就会输出类似 `feat(go): add a new features` 这种类型的commit内容，它不仅包括了commit头，还有commit内容和commit尾，所以这个工具是非常不错的。
+可以看到非常的详细，当然日常的话使用 `git commit -m ""` 确实挺快的，如果你觉得麻烦的话，可以使用 git cz 它是一个给 git commit 提供的工具，它提供了一个模版，可以在命令行输入信息，按照它的提示就会输出类似 `feat(go): add a new features` 这种类型的 commit 内容，它不仅包括了 commit 头，还有 commit 内容和 commit 尾，所以这个工具是非常不错的。
 
 当你提交以后会有这样的信息：
 
@@ -345,25 +345,25 @@ feat(git):add some messages
  2 files changed, 2 insertions(+)
  create mode 100644 README
 ```
-它提示了位于 release 分支，本次提交的完整sha-1 校验和是463dc4f ，本次提交的时候，多少文件是修改过的，多少行添加，多少行是删改过的。
+它提示了位于 release 分支，本次提交的完整 sha-1 校验和是 463dc4f，本次提交的时候，多少文件是修改过的，多少行添加，多少行是删改过的。
 
 提交的记录有三个事项要说明一下：
 - 提交的是放在暂存区域的快照，
 - 没有暂存的保持已修改的状态，
-- 处于未修改的文件，git会直接指向之前的快照不会对他们进行新的快照。
+- 处于未修改的文件，git 会直接指向之前的快照不会对他们进行新的快照。
 
 没错提交都会对项目进行一次快照，以后可以回到这个状态。
 ### 跳过暂存区域直接提交
-就是省略了git add 过程，git会自动的将所有跟踪的修改过的数据暂存并且提交。
+就是省略了 git add 过程，git 会自动的将所有跟踪的修改过的数据暂存并且提交。
 
 ```bash
 git commit -a -m "add all new benchmarks"
 ```
 
 ### 移除文件
-根据上面的那个图，我们得知，从git移除某个文件，就是从暂存区域移除，然后提交commit，我们通过git rm 完成这项工作，我们在工作目录中删除文件，这样这个文件就不会出现在未跟踪的清单中了。
+根据上面的那个图，我们得知，从 git 移除某个文件，就是从暂存区域移除，然后提交 commit，我们通过 git rm 完成这项工作，我们在工作目录中删除文件，这样这个文件就不会出现在未跟踪的清单中了。
 
-如果只是手动的删除某个文件，git status会显示 changes not staged for commit 意思就是你没有从暂存区域添加记录到commit
+如果只是手动的删除某个文件，git status 会显示 changes not staged for commit 意思就是你没有从暂存区域添加记录到 commit
 
 ```bash
 git rm README.md 
@@ -381,19 +381,19 @@ git commit -m "deleted README.md"
 
 如果要删除位于暂存区的文件则需要加上 `-f` 选项。
 
-如果只是想摆脱git的追踪，但是文件还是保留在磁盘中的时候，可以使用：
+如果只是想摆脱 git 的追踪，但是文件还是保留在磁盘中的时候，可以使用：
 ```bash
 git rm --cached README.md
 ```
-使用blob模式来删除大量文件：
+使用 blob 模式来删除大量文件：
 
 ```bash
 git rm log/\*.log
 ```
-这里有一个反斜杠，为了是不使用shell的匹配模式，直接使用git的匹配正则。
+这里有一个反斜杠，为了是不使用 shell 的匹配模式，直接使用 git 的匹配正则。
 
 ### 移动文件
-git不会显式的跟踪文件的移动操作，git使用 git mv 命令来移动文件，但是它的实质是 
+git 不会显式的跟踪文件的移动操作，git 使用 git mv 命令来移动文件，但是它的实质是
 ```bash
 mv README.md R.md
 git rm README.md
@@ -401,7 +401,7 @@ git add R.md
 ```
 的缩写
 
-git status在这两种方法的时候都会记录为 "rename"
+git status 在这两种方法的时候都会记录为 “rename”
 ```bash
 Changes to be committed:
   (use "git reset HEAD <file>..." to unstage)
@@ -409,7 +409,7 @@ Changes to be committed:
     renamed:    README.md -> R.md
 ```
 ## 查看提交历史
-提交了很多commit以后，回顾一下这个项目的提交历史，我们可以使用git log。
+提交了很多 commit 以后，回顾一下这个项目的提交历史，我们可以使用 git log。
 
 ```bash
 git clone https://github.com/shgopher/dingdang
@@ -433,7 +433,7 @@ commit b7a73eb8bd1cca31ef7225e6e4d2cbeb594b3710
 ```
 git log 默认情况下，按照时间顺序列出所有的提交，最新的在最上面，里面的内容有用户，时间，校验和以及提交的说明信息。
 
-使用 `git log -p -2` -p 会显示每次提交所引入的差异(git diff)，-2 表示只显示两条信息。
+使用 `git log -p -2` -p 会显示每次提交所引入的差异 (git diff)，-2 表示只显示两条信息。
 
 使用 `git log --stat` 会显示每次提交的简略性的总结
 
@@ -453,9 +453,9 @@ Date:   Wed Jan 4 01:52:41 2023 +0800
 - short
 - full
 - fuller
-- [format](https://git-scm.com/book/zh/v2/Git-%E5%9F%BA%E7%A1%80-%E6%9F%A5%E7%9C%8B%E6%8F%90%E4%BA%A4%E5%8E%86%E5%8F%B2#pretty_format) 定制输出格式 :例如`git log --pretty=format:"%h - %an, %ar : %s"`
+- [format](https://git-scm.com/book/zh/v2/Git-%E5%9F%BA%E7%A1%80-%E6%9F%A5%E7%9C%8B%E6%8F%90%E4%BA%A4%E5%8E%86%E5%8F%B2#pretty_format) 定制输出格式：例如 `git log --pretty=format:"%h - %an, %ar : %s"`
 
-这个命令的意思就是使用不同的格式输出log,比如oneline：
+这个命令的意思就是使用不同的格式输出 log，比如 oneline：
 
 ```bash
 git log --pretty=oneline -1
@@ -465,7 +465,7 @@ a32a8f37b5823d8b2b399f28e1746f3a20c0e692 (HEAD -> main, origin/main, origin/HEAD
 
 ```
 
-`git log --graph` 使用图表的方式显示log：
+`git log --graph` 使用图表的方式显示 log：
 
 ```bash
 $ git log --pretty=format:"%h %s" --graph
@@ -495,11 +495,11 @@ git log 常用选项：
 
 - --abbrev-commit 仅显示 SHA-1 校验和所有 40 个字符中的前几个字符。
 
-- --relative-date 使用较短的相对时间而不是完整格式显示日期（比如“2 weeks ago”）。
+- --relative-date 使用较短的相对时间而不是完整格式显示日期 (比如 “2 weeks ago”)。
 
 - --graph 在日志旁以 ASCII 图形显示分支与合并历史。
 
-- --pretty 使用其他格式显示历史提交信息。可用的选项包括 oneline、short、full、fuller 和 format（用来定义自己的格式）。
+- --pretty 使用其他格式显示历史提交信息。可用的选项包括 oneline、short、full、fuller 和 format (用来定义自己的格式)。
 
 - --oneline --pretty=oneline --abbrev-commit 合用的简写。
 
@@ -511,7 +511,7 @@ git log 常用选项：
 ```bash
 git log --since=12.weeks
 ```
-意思就是最近两周的提交,有关这两个命令更多的使用方法可以使用man git-log 的方式查看
+意思就是最近两周的提交，有关这两个命令更多的使用方法可以使用 man git-log 的方式查看
 
 `git log --author` 可以限制某个作者的提交
 ```bash
@@ -533,9 +533,9 @@ Date:   Mon Oct 31 09:44:15 2022 +0800
 
 - -<n> 仅显示最近的 n 条提交。
 
-- --since, --after 仅显示指定时间之后的提交,如果后面接的是一个具体的时间段，比如 --since=12.weeks 那么意思就是12周之内的提交。 
+- --since， --after 仅显示指定时间之后的提交，如果后面接的是一个具体的时间段，比如 --since=12.weeks 那么意思就是 12 周之内的提交。
 
-- --until, --before 仅显示指定时间之前的提交。
+- --until， --before 仅显示指定时间之前的提交。
 
 - --author 仅显示作者匹配指定字符串的提交。
 
@@ -549,9 +549,9 @@ Date:   Mon Oct 31 09:44:15 2022 +0800
 
 ## 撤销操作
 ### 撤销操作
-第一个场景是这样的，当你add以后，commit了，但是发现少add了，如果少add了，或者是说commit写的内容不太满意，我们可以使用 `git commit --amend` 来追加提交，如果你并未修改内容那么修改的的只是提交的commit信息，这次提交的信息会覆盖上次的提交信息。
+第一个场景是这样的，当你 add 以后，commit 了，但是发现少 add 了，如果少 add 了，或者是说 commit 写的内容不太满意，我们可以使用 `git commit --amend` 来追加提交，如果你并未修改内容那么修改的的只是提交的 commit 信息，这次提交的信息会覆盖上次的提交信息。
 
-这个操作使用一个新的commit取代了老的commit，目的是不用扰乱commit 整个的提交历史。
+这个操作使用一个新的 commit 取代了老的 commit，目的是不用扰乱 commit 整个的提交历史。
 
 ```bash
 git commit -m "add"
@@ -579,9 +579,9 @@ Changes not staged for commit:
 git checkout -- README.md
 
 ```
-然后我们发现修改已经撤销了，git会用一个最近的提交去覆盖目前的修改。
+然后我们发现修改已经撤销了，git 会用一个最近的提交去覆盖目前的修改。
 
-小知识：git中被提交的东西都是可以恢复的，但是没有提交的数据丢失以后就真的没有了。
+小知识：git 中被提交的东西都是可以恢复的，但是没有提交的数据丢失以后就真的没有了。
 ## 远程仓库的使用
 ### 查看远程仓库的名称
 ```bash
@@ -605,12 +605,12 @@ origin
 ```
 我们发现远程服务器的名称叫做 “origin” 这个名称也是默认的远程服务器的名称
 
-我们使用选项`-v` 我们发现出现了下面的内容：
+我们使用选项 `-v` 我们发现出现了下面的内容：
 ```bash
 origin	https://github.com/shgopher/iam (fetch)
 origin	https://github.com/shgopher/iam (push)
 ```
-你会发现 origin就只是一个别名而已，它代表了两个URL，一个是拉取的URL一个是push的URL，通常这俩URL是一致的，不过你也可以设置成不同的样子。
+你会发现 origin 就只是一个别名而已，它代表了两个 URL，一个是拉取的 URL 一个是 push 的 URL，通常这俩 URL 是一致的，不过你也可以设置成不同的样子。
 
 ### 添加远程仓库
 使用的是 `git remote add 简写 url` 这样的模式，比如说：
@@ -626,7 +626,7 @@ sh	https://github.com/shgopher/iam (fetch)
 sh	https://github.com/shgopher/iam (push)
 ```
 
-我们使用 `git fetch sh`的方式就可以拉取数据：
+我们使用 `git fetch sh` 的方式就可以拉取数据：
 
 ```bash
 # 前提是在这个路径下
@@ -641,16 +641,16 @@ From https://github.com/shgopher/iam
  * [new branch]      dev        -> sh/dev
 ```
 ### 从远程服务器中抓取和拉取
-- git fetch ：从远程服务器抓取内容，但是不会自动合并。
+- git fetch：从远程服务器抓取内容，但是不会自动合并。
 
-- git pull ： 从远程服务器抓取内容，并且自动合并到本地
+- git pull：从远程服务器抓取内容，并且自动合并到本地
 
-当我们克隆的时候，实际上git还做了这样一个工作：
+当我们克隆的时候，实际上 git 还做了这样一个工作：
 
 ```bash
 git remote origin URL
 ```
-系统会自动的添加远程仓库的标识，并且简写是origin
+系统会自动的添加远程仓库的标识，并且简写是 origin
 ### 推送到远程仓库
 我们使用 `git push remote branch` 这样的命令去推送：
 ```bash
@@ -682,18 +682,18 @@ git remote show sh
 ```
 这里面提示的信息有，
 - 远程服务器的简写名称 sh
-- fetch 和push url
-- HEAD 分支 ：master
+- fetch 和 push url
+- HEAD 分支：master
 - 远程分支
   - tracked 表示这个分支下载到本地被追踪中
   - stale 表示远程仓库这个分支已经弃用了。
-- 下面还表示那个分支可以直接使用git pull 可以自动合并 这里是master
-- 以及表示自动push的 这里也是 master
+- 下面还表示那个分支可以直接使用 git pull 可以自动合并这里是 master
+- 以及表示自动 push 的这里也是 master
 
 ### 远程仓库的重命名和删除
 使用 `git remote rename origin tt` 去修改远程仓库的简写 origin 为 tt
 
-使用 `git remote remove tt` 去删除远程仓库的一个名字，比如本来有俩名称 tt和origin，当你删除tt的时候，就只剩下了origin了。
+使用 `git remote remove tt` 去删除远程仓库的一个名字，比如本来有俩名称 tt 和 origin，当你删除 tt 的时候，就只剩下了 origin 了。
 ## 打标签
 版本是一个很重要的标志，它代表了你的项目中的重要节点，形如：`v1.2.1`
 
@@ -708,7 +708,7 @@ v1.0.2
 v1.0.3
 
 ```
-如果想按照特定的模式去查找标签，可以使用`git tag -l "v1.0*"` 的方式去寻找
+如果想按照特定的模式去查找标签，可以使用 `git tag -l "v1.0*"` 的方式去寻找
 ```bash
 git tag -l "v1.0*"
 
@@ -756,7 +756,7 @@ Date:   Mon Mar 17 21:52:11 2008 -0700
     changed the version number
 ```
 
-输出了 打标签的人，时间，附注的信息，提交的commit信息
+输出了打标签的人，时间，附注的信息，提交的 commit 信息
 
 创建临时的轻量标签：
 ```bash
@@ -775,11 +775,11 @@ Date:   Mon Mar 17 21:52:11 2008 -0700
 
     changed the version number
 ```
-临时标签不会显示标签信息，只有commit的信息
+临时标签不会显示标签信息，只有 commit 的信息
 
 补打标签：
 
-可以对过去的commit打标签：
+可以对过去的 commit 打标签：
 
 ```bash
 # git tag -a v1.3.0 某次commit的校验和或者是部分校验和
@@ -814,20 +814,20 @@ git push origin --delete v1.4-lw
 # 切换分支到 bugv2 ，起点是 v2.0.0
 git checkout -b bugv2 v2.0.0
 ```
-然后在这个分支提交新的版本即可，比如v2.0.1 这个时候这个tag也不会跟例如v2.1.0 这种之前的tag进行冲突。
+然后在这个分支提交新的版本即可，比如 v2.0.1 这个时候这个 tag 也不会跟例如 v2.1.0 这种之前的 tag 进行冲突。
 ## git 别名
-我们要在gitconfig中设置alias选项，通过命令行是这么设置的
+我们要在 gitconfig 中设置 alias 选项，通过命令行是这么设置的
 ```bash
 git config --global alias.a add
 git config --global alias.p push
 ```
-如果想让git执行外部的命令可以在外部命令前面加上 `!`
+如果想让 git 执行外部的命令可以在外部命令前面加上 `!`
 ```bash
 git config --global alias.gk '!gitk'
 ```
-这里 gitk就是一个外部的git协作工作，显然它属于外部命令，那么就需要加上一个 `!` 就可以了。
+这里 gitk 就是一个外部的 git 协作工作，显然它属于外部命令，那么就需要加上一个 `!` 就可以了。
 
-通常来说设置git的 config的时候不要直接更改git的gitconfig源文件，使用命令行写入更为稳妥。
+通常来说设置 git 的 config 的时候不要直接更改 git 的 gitconfig 源文件，使用命令行写入更为稳妥。
 
 
 
