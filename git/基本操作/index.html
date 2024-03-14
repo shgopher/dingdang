@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>git 的基本操作 | dingdang - 一本工具大全</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <link rel="shortcut icon" type="image/x-icon" href="/dingdang/favicon.ico">
+    <meta name="description" content="包括了git，devOps,ddd,okr,等众多技术">
+    
+    <link rel="preload" href="/dingdang/assets/css/0.styles.d3f6ff8f.css" as="style"><link rel="preload" href="/dingdang/assets/js/app.77b7e048.js" as="script"><link rel="preload" href="/dingdang/assets/js/2.b9a104ce.js" as="script"><link rel="preload" href="/dingdang/assets/js/13.4531d3e7.js" as="script"><link rel="prefetch" href="/dingdang/assets/js/10.d58b70f4.js"><link rel="prefetch" href="/dingdang/assets/js/11.e6a1e2f5.js"><link rel="prefetch" href="/dingdang/assets/js/12.274cc61c.js"><link rel="prefetch" href="/dingdang/assets/js/14.7fdb6200.js"><link rel="prefetch" href="/dingdang/assets/js/15.7655e60e.js"><link rel="prefetch" href="/dingdang/assets/js/16.70561a23.js"><link rel="prefetch" href="/dingdang/assets/js/17.d77a20a9.js"><link rel="prefetch" href="/dingdang/assets/js/18.5cdb7470.js"><link rel="prefetch" href="/dingdang/assets/js/19.1c016fed.js"><link rel="prefetch" href="/dingdang/assets/js/20.f8309a82.js"><link rel="prefetch" href="/dingdang/assets/js/21.f83486ab.js"><link rel="prefetch" href="/dingdang/assets/js/22.5d221743.js"><link rel="prefetch" href="/dingdang/assets/js/23.1d35ef54.js"><link rel="prefetch" href="/dingdang/assets/js/24.7686dcfb.js"><link rel="prefetch" href="/dingdang/assets/js/25.09a1ac97.js"><link rel="prefetch" href="/dingdang/assets/js/26.d1ff0cb6.js"><link rel="prefetch" href="/dingdang/assets/js/27.81f0dbc0.js"><link rel="prefetch" href="/dingdang/assets/js/28.f6e780d5.js"><link rel="prefetch" href="/dingdang/assets/js/3.012a9eb9.js"><link rel="prefetch" href="/dingdang/assets/js/4.e3f2f862.js"><link rel="prefetch" href="/dingdang/assets/js/5.4f6f5460.js"><link rel="prefetch" href="/dingdang/assets/js/6.3d8afadd.js"><link rel="prefetch" href="/dingdang/assets/js/7.ff8641cf.js"><link rel="prefetch" href="/dingdang/assets/js/8.f46209fe.js"><link rel="prefetch" href="/dingdang/assets/js/9.43e9a334.js">
+    <link rel="stylesheet" href="/dingdang/assets/css/0.styles.d3f6ff8f.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/dingdang/" class="home-link router-link-active"><img src="https://avatars.githubusercontent.com/u/42873232" alt="dingdang - 一本工具大全" class="logo"> <span class="site-name can-hide">dingdang - 一本工具大全</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/dingdang/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Menu" class="dropdown-title"><span class="title">系列教程</span> <span class="arrow down"></span></button> <button type="button" aria-label="Menu" class="mobile-dropdown-title"><span class="title">系列教程</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://shgopher.github.io/GOFamily/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GOFamily 【go语言教程】
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://shgopher.github.io/408/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  408  【基础408知识教程】
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://shgopher.github.io/luban/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  luban  【系统设计教程】
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://shgopher.github.io/dingdang/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  dingdang  【工具教程】
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://shgopher.github.io/god/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  god  【给程序员写的书】
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div><div class="nav-item"><a href="/dingdang/#wechat.png" class="nav-link">
+  微信公众号
+</a></div><div class="nav-item"><a href="https://shgopher.github.io/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  作者
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <a href="https://github.com/shgopher/dingdang" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/dingdang/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Menu" class="dropdown-title"><span class="title">系列教程</span> <span class="arrow down"></span></button> <button type="button" aria-label="Menu" class="mobile-dropdown-title"><span class="title">系列教程</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://shgopher.github.io/GOFamily/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GOFamily 【go语言教程】
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://shgopher.github.io/408/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  408  【基础408知识教程】
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://shgopher.github.io/luban/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  luban  【系统设计教程】
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://shgopher.github.io/dingdang/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  dingdang  【工具教程】
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://shgopher.github.io/god/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  god  【给程序员写的书】
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div><div class="nav-item"><a href="/dingdang/#wechat.png" class="nav-link">
+  微信公众号
+</a></div><div class="nav-item"><a href="https://shgopher.github.io/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  作者
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <a href="https://github.com/shgopher/dingdang" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>git 的基本操作</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/dingdang/git/%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/#建立一个-git-仓库" class="sidebar-link">建立一个 git 仓库</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/dingdang/git/%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/#将一个尚未配置-git-的本地目录转化为-git-仓库" class="sidebar-link">将一个尚未配置 git 的本地目录转化为 git 仓库：</a></li><li class="sidebar-sub-header"><a href="/dingdang/git/%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/#克隆现有的仓库" class="sidebar-link">克隆现有的仓库</a></li></ul></li><li><a href="/dingdang/git/%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/#记录每次更新到仓库" class="sidebar-link">记录每次更新到仓库</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/dingdang/git/%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/#跟踪新的文件" class="sidebar-link">跟踪新的文件</a></li><li class="sidebar-sub-header"><a href="/dingdang/git/%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/#介绍-git-status" class="sidebar-link">介绍 git status</a></li><li class="sidebar-sub-header"><a href="/dingdang/git/%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/#介绍。gitignore" class="sidebar-link">介绍。gitignore</a></li><li class="sidebar-sub-header"><a href="/dingdang/git/%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/#查看已暂存和未暂存的修改" class="sidebar-link">查看已暂存和未暂存的修改</a></li><li class="sidebar-sub-header"><a href="/dingdang/git/%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/#提交更新" class="sidebar-link">提交更新</a></li><li class="sidebar-sub-header"><a href="/dingdang/git/%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/#跳过暂存区域直接提交" class="sidebar-link">跳过暂存区域直接提交</a></li><li class="sidebar-sub-header"><a href="/dingdang/git/%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/#移除文件" class="sidebar-link">移除文件</a></li><li class="sidebar-sub-header"><a href="/dingdang/git/%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/#移动文件" class="sidebar-link">移动文件</a></li></ul></li><li><a href="/dingdang/git/%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/#查看提交历史" class="sidebar-link">查看提交历史</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/dingdang/git/%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/#限制输出长度" class="sidebar-link">限制输出长度</a></li></ul></li><li><a href="/dingdang/git/%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/#撤销操作" class="sidebar-link">撤销操作</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/dingdang/git/%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/#撤销操作-2" class="sidebar-link">撤销操作</a></li><li class="sidebar-sub-header"><a href="/dingdang/git/%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/#取消暂存的文件" class="sidebar-link">取消暂存的文件</a></li><li class="sidebar-sub-header"><a href="/dingdang/git/%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/#撤销对文件的修改" class="sidebar-link">撤销对文件的修改</a></li></ul></li><li><a href="/dingdang/git/%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/#远程仓库的使用" class="sidebar-link">远程仓库的使用</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/dingdang/git/%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/#查看远程仓库的名称" class="sidebar-link">查看远程仓库的名称</a></li><li class="sidebar-sub-header"><a href="/dingdang/git/%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/#添加远程仓库" class="sidebar-link">添加远程仓库</a></li><li class="sidebar-sub-header"><a href="/dingdang/git/%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/#从远程服务器中抓取和拉取" class="sidebar-link">从远程服务器中抓取和拉取</a></li><li class="sidebar-sub-header"><a href="/dingdang/git/%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/#推送到远程仓库" class="sidebar-link">推送到远程仓库</a></li><li class="sidebar-sub-header"><a href="/dingdang/git/%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/#查看远程仓库的详细信息" class="sidebar-link">查看远程仓库的详细信息</a></li><li class="sidebar-sub-header"><a href="/dingdang/git/%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/#远程仓库的重命名和删除" class="sidebar-link">远程仓库的重命名和删除</a></li></ul></li><li><a href="/dingdang/git/%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/#打标签" class="sidebar-link">打标签</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/dingdang/git/%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/#创建标签" class="sidebar-link">创建标签</a></li><li class="sidebar-sub-header"><a href="/dingdang/git/%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/#上传标签到远程仓库" class="sidebar-link">上传标签到远程仓库</a></li><li class="sidebar-sub-header"><a href="/dingdang/git/%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/#删除标签" class="sidebar-link">删除标签</a></li></ul></li><li><a href="/dingdang/git/%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/#git-别名" class="sidebar-link">git 别名</a><ul class="sidebar-sub-headers"></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="git-的基本操作">git 的基本操作</h1> <h2 id="建立一个-git-仓库">建立一个 git 仓库</h2> <h3 id="将一个尚未配置-git-的本地目录转化为-git-仓库">将一个尚未配置 git 的本地目录转化为 git 仓库：</h3> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">git</span> init
+</code></pre></div><p>这个时候，会建立一个。git 的目录，注意这个时候目录下的文件并没有被追踪，你需要完成，add commit 这两个命令之后才能跟踪文件：</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">git</span> <span class="token function">add</span> *.go
+<span class="token function">git</span> <span class="token function">add</span> LICENSE
+<span class="token function">git</span> commit -m <span class="token string">&quot;feat(go): add all go files&quot;</span>
+</code></pre></div><h3 id="克隆现有的仓库">克隆现有的仓库</h3> <p>通常来说，你会使用 <code>git clone</code> 命令来克隆远程的服务，git clone 的时候，会将远程的全部数据下载过来放入本地的。git 中，然后从中读取最新版，生成最新的文件等待后续的开发工作。</p> <p>注意默认情况下是克隆所有版本的文件，如果你只想克隆某个版本的文件，可以设置克隆的层级以及克隆的分支。</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">git</span> clone https://github.com/shgopher/dingdang
+
+<span class="token comment"># 只克隆最新的代码</span>
+<span class="token function">git</span> clone --depth<span class="token operator">=</span><span class="token number">1</span> https://github.com/shgopher/dingdang
+
+<span class="token comment"># 只克隆某个分支的代码</span>
+<span class="token function">git</span> clone -b<span class="token operator">=</span>main https://github.com/shgopher/dingdang
+
+<span class="token comment"># 只克隆main分支的最新代码</span>
+<span class="token function">git</span> clone --depth<span class="token operator">=</span><span class="token number">1</span> -b<span class="token operator">=</span>main https://github.com/shgopher/dingdang
+
+<span class="token comment"># 重命名路径名称 </span>
+<span class="token function">git</span> clone https://github.com/shgopher/dingdang <span class="token function">dd</span> 
+</code></pre></div><p>更多用法可以使用 <code>git clone --help</code> 去查看一下详解。</p> <h2 id="记录每次更新到仓库">记录每次更新到仓库</h2> <p>git 工作目录下的文件拥有两种状态，已跟踪和未跟踪，已跟踪意味着，git 对它进行了跟踪记录，在上一次的快照中有它的记录，它本身的状态可能是未修改，已修改，或者已经放入暂存区域。未跟踪的文件，不存在于上次的快照记录中，也没有放入暂存区域，如果你是克隆的某个项目，那么路径下的所有文件都处于已跟踪的状态，它们处于的状态是未修改的状态，因为 git 刚刚才检测出它们。</p> <p>下面有一张图：</p> <p><img src="https://git-scm.com/book/en/v2/images/lifecycle.png" alt=""></p> <p>我们来解释一下：</p> <p>最左边的 untracked 表示未被跟踪的，unmodified 表示没有修改的，modified 表示已经修改的，staged 表示放入暂存区域</p> <ul><li>我们将没有跟踪的文件，跟踪它，然后将它放入到了暂存区域，暂存区域就会在下次提交的时候提交它们，并将它们的状态改为未被修改的。</li> <li>未被修改的文件，当我们编辑了它们以后，就会将状态改为已被修改的，然后已被修改的文件又会被放入到暂存区域改为状态是已经暂存的，然后提交以后，状态被修改为未被修改的</li> <li>其中放入暂存区域，将状态修改为已经暂存的，命令是 <code>git add</code>，将已经暂存的提交，状态改为未被修改的，这个命令是 <code>git commit</code>，git 会自动记录文件是否修改，也就是说从 unmodified 的编辑过程，状态改为 modified 这个过程，是 git 自动记录的。</li> <li>将未被修改的文件 remove 删除的时候，就会将这个文件的状态从未被修改的变为未被追踪的，也就是说，这个文件在删除之后，git 系统就不再跟踪这个文件了。</li></ul> <h3 id="跟踪新的文件">跟踪新的文件</h3> <p>使用 <code>git status</code> 去查看文件的状态。</p> <p>显示是否含有未跟踪的文件，是否有出于暂存区域的文件，例如：</p> <div class="language-bash extra-class"><pre class="language-bash"><code>On branch master
+Your branch is up to <span class="token function">date</span> with <span class="token string">'origin/master'</span><span class="token builtin class-name">.</span>
+
+Changes not staged <span class="token keyword">for</span> commit:
+  <span class="token punctuation">(</span>use <span class="token string">&quot;git add &lt;file&gt;...&quot;</span> to update what will be committed<span class="token punctuation">)</span>
+  <span class="token punctuation">(</span>use <span class="token string">&quot;git restore &lt;file&gt;...&quot;</span> to discard changes <span class="token keyword">in</span> working directory<span class="token punctuation">)</span>
+	modified:   go.mod
+	modified:   go.sum
+	modified:   internal/pkg/code/code.go
+	modified:   internal/pkg/logger/sql.go
+	modified:   pkg/shutdown/shutdown.go
+	modified:   tools/codegen/codegen.go
+</code></pre></div><ul><li>第一行指出，这是一个 master 的分支</li> <li>第二行显示，这个分支同远程服务器上对应的分支没有偏离</li> <li>下面的内容表示，有修改的文件没有被放入暂存区域。需要使用 <code>git add</code> 命令</li></ul> <p>我们在项目中新建一个文件，<code>main.go</code> 由于之前并不存在这个文件，之前的快照里没有它，所以它的状态就是 untracked</p> <div class="language-bash extra-class"><pre class="language-bash"><code>Untracked files:
+  <span class="token punctuation">(</span>use <span class="token string">&quot;git add &lt;file&gt;...&quot;</span> to include <span class="token keyword">in</span> what will be committed<span class="token punctuation">)</span>
+
+    test.md
+</code></pre></div><p>说明 test.md 并没有被 git 跟踪，git 并不会自动的去跟踪文件，需要手动的说明一下 git 才会跟踪这个文件，我们使用 <code>git add test.md</code> 这个命令就可以完成跟踪</p> <div class="language-bash extra-class"><pre class="language-bash"><code>Changes to be committed:
+  <span class="token punctuation">(</span>use <span class="token string">&quot;git restore --staged &lt;file&gt;...&quot;</span> to unstage<span class="token punctuation">)</span>
+	new file:   test.md
+</code></pre></div><p>我们可以看到，使用了 <code>git add</code> 之后，出现了 <code>new file</code> 的说明，我们看上面的图就知道，这个文件已经被放入了暂存区域了，我们只需要再 <code>git commit</code> 一下就可以完成跟踪这个流程了。</p> <p>通过这个演示我们发现，跟踪文件，和修改文件都需要放入暂存区域，而放入暂存区域的这个命令都是 <code>git add</code> 不管是跟踪未被暂存的文件还是要修改的文件都是 <code>git add</code> 这一个命令。而从暂存区域然后提交数据到 git 中命令就是 <code>git commit</code> 这一个命令的，<code>git commit</code> 的命令是一个含义，但是 git add 这一个命令是干了两件事儿的，通过刚才的解释，以及上面的图就可以理解了。不仅如此 <code>git add</code> 还能在合并冲突的时候，在修改过的文件后使用，意思是冲突文件的状态改为已经解决冲突，并提交到暂存区域，所以总结一下，git add 的意思可以理解为，<strong>将文件添加到暂存区域，也就是添加到下一次的提交中。</strong></p> <p><code>git add</code> 后面跟文件或者是路径，如果是路径那么将递归的将路径下的所有文件递归的找到并且添加到暂存区域。</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">git</span> <span class="token function">add</span> <span class="token builtin class-name">.</span>
+</code></pre></div><p>意思就是将这个路径下的，以及包含所有的子路径的所有文件，都添加到暂存区域。</p> <p>文件是可以同时出现在暂存区和已修改区域这两个状态中的，其实很好理解，比如一个文件，你 add 之后存在于暂存区域了，这个时候你又进行了一次修改，那么当你还没有 add 的时候，它就会同时出现在暂存区域和已修改中，这个时候是可以 commit 的，只不过 commit 的是第一次修改以后的数据，如果想把第二次的修改也 commit，就需要再次 add。</p> <div class="language-bash extra-class"><pre class="language-bash"><code>Changes to be committed:
+  <span class="token punctuation">(</span>use <span class="token string">&quot;git reset HEAD &lt;file&gt;...&quot;</span> to unstage<span class="token punctuation">)</span>
+
+    new file:   README
+    modified:   CONTRIBUTING.md
+
+Changes not staged <span class="token keyword">for</span> commit:
+  <span class="token punctuation">(</span>use <span class="token string">&quot;git add &lt;file&gt;...&quot;</span> to update what will be committed<span class="token punctuation">)</span>
+  <span class="token punctuation">(</span>use <span class="token string">&quot;git checkout -- &lt;file&gt;...&quot;</span> to discard changes <span class="token keyword">in</span> working directory<span class="token punctuation">)</span>
+
+    modified:   CONTRIBUTING.md
+</code></pre></div><p>我们两次 add 之后</p> <div class="language-bash extra-class"><pre class="language-bash"><code>Changes to be committed:
+  <span class="token punctuation">(</span>use <span class="token string">&quot;git reset HEAD &lt;file&gt;...&quot;</span> to unstage<span class="token punctuation">)</span>
+
+    new file:   README
+    modified:   CONTRIBUTING.md
+</code></pre></div><h3 id="介绍-git-status">介绍 git status</h3> <p>git status 可以输出全部的提示内容，我们使用 <code>git status --short</code> 或者是 <code>git status -s</code> 就可以输出简单的提示内容：</p> <div class="language-bash extra-class"><pre class="language-bash"><code>M lib/git.rb
+MM README.md
+ M go.mod
+ M go.sum
+ M internal/pkg/code/code.go
+ M internal/pkg/logger/sql.go
+ M pkg/shutdown/shutdown.go
+A  test.md
+ M tools/codegen/codegen.go
+?? LICENSE.txt
+</code></pre></div><ul><li>?? ：表示未被跟踪的文件</li> <li>A：表示从未被跟踪状态新添加到暂存区的文件</li> <li>带有空格的 M：表示修改后的文件还没放入暂存区</li> <li>顶头写的 M：表示已修改的文件并且放入了暂存区域</li> <li>顶头写的 MM：表示已修改的文件并且放入了暂存区域，但是又修改了还没有 add 的时候的标记</li></ul> <h3 id="介绍。gitignore">介绍。gitignore</h3> <p>当我们想某些文件不让 git 跟踪的时候，并且也不想让它们出现在未跟踪这个目录下，而且有的时候我们会使用 <code>git add .</code> 这种全局 add，所以使用。gitignore 这种可以忽略跟踪的命令就很有必要了。</p> <p>在项目的根目录下新建一个。gitignore 文件，比如：</p> <div class="language-bash extra-class"><pre class="language-bash"><code>.idea
+*.txt
+node_modules/
+</code></pre></div><p>以下是规则：</p> <ul><li>使用 <code>#</code> 作为 <code>.gitignore</code> 的注释</li> <li>可以使用 glob 模式的正则表达式 (shell 使用的简化过的正则)
+<ul><li><code>*</code> 匹配 0 个或者多个任意的字符</li> <li><code>[abc]</code> 匹配任何<strong>一个</strong>列在括号里的字符</li> <li><code>?</code> 只匹配一个任意字符</li> <li><code>[0-9]</code> 方括号中的短线表示范围</li> <li><code>**</code> 两个星号表示匹配任意中间目录，<code>a/**/z</code> 匹配 <code>a/z</code> <code>a/n/d/z</code></li></ul></li> <li>以 <code>/</code> 开头防止递归，比如 <code>/file</code> 表示只忽略当前目录下的 file 文件，而不会向下递归，忽略 <code>/a/file</code></li> <li>以 <code>/</code> 结尾，表示目录，而不是目录+文件</li> <li><code>!</code> 表示取反，比如 <code>!name/</code> 表示除了 name 之外的目录都要忽略</li></ul> <p>下面给出一个具体的例子</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># 表示忽略url除了目录之外的所有文件</span>
+url
+<span class="token operator">!</span>url/
+
+<span class="token comment"># 忽略所有的 .a 文件</span>
+*.a
+
+<span class="token comment"># 只忽略当前目录下的 TODO 文件，而不忽略 subdir/TODO</span>
+/TODO
+
+<span class="token comment"># 例如 abc.a u.c bdde.b</span>
+*.<span class="token punctuation">[</span>abc<span class="token punctuation">]</span>
+
+<span class="token comment"># 忽略的是nodemodules以及下面的多级内容，简而言之，如果只是某个文件叫做nodemodules就不会忽略，必须满足nodemodules加上多级的子目录才会被匹配上</span>
+nodemodules/**
+
+<span class="token comment"># 忽略 url1 所有</span>
+url1
+<span class="token comment"># 仅仅忽略 url 文件</span>
+url1
+<span class="token operator">!</span>url1/
+<span class="token comment"># 忽略 url1  这个目录（当然包含了这个目录的所有内容也被忽略了）</span>
+url1/
+
+
+<span class="token comment"># 忽略 doc/notes.txt，但不忽略 doc/server/arch.txt</span>
+doc/*.txt
+
+<span class="token comment"># 忽略 doc/ 目录及其所有子目录下的 .pdf 文件</span>
+doc/**/*.pdf
+</code></pre></div><p>GitHub 上有一个推荐使用的<a href="https://github.com/github/gitignore" target="_blank" rel="noopener noreferrer">。gitignore<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> 可以看一下</p> <p>比如 go 的：</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># If you prefer the allow list template instead of the deny list, see community template:</span>
+<span class="token comment"># https://github.com/github/gitignore/blob/main/community/Golang/Go.AllowList.gitignore</span>
+<span class="token comment">#</span>
+<span class="token comment"># Binaries for programs and plugins</span>
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+<span class="token comment"># Test binary, built with `go test -c`</span>
+*.test
+
+<span class="token comment"># Output of the go coverage tool, specifically when used with LiteIDE</span>
+*.out
+
+<span class="token comment"># Dependency directories (remove the comment below to include it)</span>
+<span class="token comment"># vendor/</span>
+
+<span class="token comment"># Go workspace file</span>
+go.work
+</code></pre></div><p>。gitignore 在一个项目中也是可以有很多个的，根目录有一个，在各个子目录下也可以有，子目录下的优先级更高。</p> <h3 id="查看已暂存和未暂存的修改">查看已暂存和未暂存的修改</h3> <p>我们使用 git status 可以查看目前的状态，但是内容过于简洁，比如只能看某个文件是什么状态，位于未追踪的状态，已经修改但是并未提交的暂存区的状态，将要提交的状态等，只能看到文件的状态，如果要看到更加详细的状态，我们可以使用 git diff</p> <p>git diff 这个命令比较的是工作目录当前文件和暂存区域快照之间的差异，也就是说，修改了的和暂存区的差别，<strong>从命令上来说就是 git add 之前和之后的差异。</strong></p> <p>如果要看的差异是已暂存和已提交的差异，那么可以使用 <code>git diff --staged</code> 这个命令比较的就是 <code>git commit</code> 前后的差异</p> <p>这里推荐一些工作来查看 git diff，毕竟工具更加直观，比如使用 vs code 这个编辑器，就可以直接显示 git diff，非常的直观。</p> <h3 id="提交更新">提交更新</h3> <p>将暂存区域的数据提交到。git 中，使用 <code>git commit</code>，如果使用 <code>git commit -m &quot;&quot;</code> 那么就会直接提交 <code>-m</code> 后面的内容到提交记录中，如果没有 <code>-m</code> 那么系统就会调用默认的编辑器来填写内容，我们可以使用 <code>git config --global core.editor</code> 来设置这个编辑器，通常默认的是 vim</p> <p>一般的提交过程会在注释里写入最后一次的 git status</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># Please enter the commit message for your changes. Lines starting</span>
+<span class="token comment"># with '#' will be ignored, and an empty message aborts the commit.</span>
+<span class="token comment">#</span>
+<span class="token comment"># On branch main</span>
+<span class="token comment"># Your branch is up to date with 'origin/main'.</span>
+<span class="token comment">#</span>
+<span class="token comment"># Changes to be committed:</span>
+<span class="token comment">#       modified:   README.md</span>
+<span class="token comment">#</span>
+<span class="token comment"># Changes not staged for commit:</span>
+<span class="token comment">#       modified:   ../../README.md</span>
+<span class="token comment">#       modified:   README.md</span>
+<span class="token comment">#       modified:   &quot;../\345\237\272\346\234\254\346\246\202\345\277\265/README.md&quot;</span>
+<span class="token comment">#       modified:   &quot;../\345\237\272\346\234\254\351\205\215\347\275\256/README.md&quot;</span>
+<span class="token comment">#       deleted:    &quot;../\347\252\201\345\217\221\347\212\266\345\206\265\345\244\204\347\220\206/README.md&quot;</span>
+<span class="token comment">#       deleted:    &quot;../\351\224\231\350\257\257\345\244\204\347\220\206/README.md&quot;</span>
+<span class="token comment">#</span>
+<span class="token comment"># Untracked files:</span>
+<span class="token comment">#       &quot;../\345\256\236\351\231\205\345\272\224\347\224\250/&quot;</span>
+<span class="token comment">#       &quot;../\345\272\225\345\261\202\345\216\237\347\220\206/&quot;</span>
+
+feat<span class="token punctuation">(</span>git<span class="token punctuation">)</span>:add some messages
+</code></pre></div><p>注释最好保留下来，最后输入信息即可</p> <p>如果想保留的不是 git status 而是 git diff 可以这么做：<code>git commit -v</code></p> <div class="language-bash extra-class"><pre class="language-bash"><code>+url
++<span class="token operator">!</span>url/
++
++<span class="token comment"># 忽略所有的 .a 文件</span>
++*.a
++
++<span class="token comment"># 只忽略当前目录下的 TODO 文件，而不忽略 subdir/TODO</span>
++/TODO
++
++<span class="token comment"># 例如 abc.a u.c bdde.b</span>
++*.<span class="token punctuation">[</span>abc<span class="token punctuation">]</span>
++
++<span class="token comment"># 忽略的是nodemodules以及下面的多级内容，简而言之，如果只是某个文件叫做nodemodules就不会忽略，必须满足nodemodules加上多级的子目录才会被匹配上</span>
++nodemodules/**
++
++<span class="token comment"># 忽略 url1 所有</span>
++url1
++<span class="token comment"># 仅仅忽略 url 文件</span>
++url1
++<span class="token operator">!</span>url1/
++<span class="token comment"># 忽略 url1  这个目录（当然包含了这个目录的所有内容也被忽略了）</span>
++url1/
++
++
++<span class="token comment"># 忽略 doc/notes.txt，但不忽略 doc/server/arch.txt</span>
++doc/*.txt
++
++<span class="token comment"># 忽略 doc/ 目录及其所有子目录下的 .pdf 文件</span>
++doc/**/*.pdf
++``<span class="token variable"><span class="token variable">`</span>
++GitHub上有一个推荐使用的 <span class="token punctuation">[</span>.gitignore<span class="token punctuation">]</span><span class="token punctuation">(</span>https://github.com/github/gitignore<span class="token punctuation">)</span> 可以看一下
++
++比如go的：
++<span class="token variable">`</span></span>`<span class="token variable"><span class="token variable">`</span><span class="token function">bash</span>
++<span class="token comment"># If you prefer the allow list template instead of the deny list, see community template:</span>
++<span class="token comment"># https://github.com/github/gitignore/blob/main/community/Golang/Go.AllowList.gitignore</span>
++<span class="token comment">#</span>
++<span class="token comment"># Binaries for programs and plugins</span>
++*.exe
++*.exe~
++*.dll
++*.so
++*.dylib
++
++<span class="token comment"># Test binary, built with </span><span class="token variable">`</span></span>go <span class="token builtin class-name">test</span> -c<span class="token variable"><span class="token variable">`</span>
++*.test
++
++<span class="token comment"># Output of the go coverage tool, specifically when used with LiteIDE</span>
++*.out
++
++<span class="token comment"># Dependency directories (remove the comment below to include it)</span>
++<span class="token comment"># vendor/</span>
++
++<span class="token comment"># Go workspace file</span>
++go.work
++<span class="token variable">`</span></span>``
++
++.gitignore 在一个项目中也是可以有很多个的，根目录有一个，在各个子目录下也可以有，子目录下的优先级更高。
+
+ <span class="token comment">### 查看已暂存和未暂存的修改</span>
++我们使用git status 可以查看目前的状态，但是内容过于简洁，比如只能看某个文件是什么状态，位于未追踪的状态，已经修改但是并未提交的暂存区的状态，将要提交的状态等，只能看到文件的状态，如果要看到更加详细的状态
+，我们可以使用 <span class="token function">git</span> <span class="token function">diff</span>
+
++git <span class="token function">diff</span> 这个命令比较的是工作目录当前文件和暂存区域快照之间的差异，也就是说，修改了的和暂存区的差别，从命令上来说就是git <span class="token function">add</span> 之前和之后的差异。
+ <span class="token comment">### 提交更新</span>
+
+ <span class="token comment">### 跳过暂存区域直接提交</span>
+
+
+</code></pre></div><p>可以看到非常的详细，当然日常的话使用 <code>git commit -m &quot;&quot;</code> 确实挺快的，如果你觉得麻烦的话，可以使用 git cz 它是一个给 git commit 提供的工具，它提供了一个模版，可以在命令行输入信息，按照它的提示就会输出类似 <code>feat(go): add a new features</code> 这种类型的 commit 内容，它不仅包括了 commit 头，还有 commit 内容和 commit 尾，所以这个工具是非常不错的。</p> <p>当你提交以后会有这样的信息：</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token punctuation">[</span>release 463dc4f<span class="token punctuation">]</span> Story <span class="token number">182</span>: Fix<span class="token punctuation">(</span>root<span class="token punctuation">)</span>: benchmarks <span class="token keyword">for</span> speed
+ <span class="token number">2</span> files changed, <span class="token number">2</span> insertions<span class="token punctuation">(</span>+<span class="token punctuation">)</span>
+ create mode <span class="token number">100644</span> README
+</code></pre></div><p>它提示了位于 release 分支，本次提交的完整 sha-1 校验和是 463dc4f，本次提交的时候，多少文件是修改过的，多少行添加，多少行是删改过的。</p> <p>提交的记录有三个事项要说明一下：</p> <ul><li>提交的是放在暂存区域的快照，</li> <li>没有暂存的保持已修改的状态，</li> <li>处于未修改的文件，git 会直接指向之前的快照不会对他们进行新的快照。</li></ul> <p>没错提交都会对项目进行一次快照，以后可以回到这个状态。</p> <h3 id="跳过暂存区域直接提交">跳过暂存区域直接提交</h3> <p>就是省略了 git add 过程，git 会自动的将所有跟踪的修改过的数据暂存并且提交。</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">git</span> commit -a -m <span class="token string">&quot;add all new benchmarks&quot;</span>
+</code></pre></div><h3 id="移除文件">移除文件</h3> <p>根据上面的那个图，我们得知，从 git 移除某个文件，就是从暂存区域移除，然后提交 commit，我们通过 git rm 完成这项工作，我们在工作目录中删除文件，这样这个文件就不会出现在未跟踪的清单中了。</p> <p>如果只是手动的删除某个文件，git status 会显示 changes not staged for commit 意思就是你没有从暂存区域添加记录到 commit</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">git</span> <span class="token function">rm</span> README.md 
+
+<span class="token function">rm</span> README.md
+
+<span class="token function">git</span> commit -m <span class="token string">&quot;deleted README.md&quot;</span>
+</code></pre></div><p>当然也可以另外一种方法：</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">rm</span> README.md
+<span class="token function">git</span> <span class="token function">add</span> README.md
+<span class="token function">git</span> commit -m <span class="token string">&quot;deleted README.md&quot;</span>
+</code></pre></div><p>如果要删除位于暂存区的文件则需要加上 <code>-f</code> 选项。</p> <p>如果只是想摆脱 git 的追踪，但是文件还是保留在磁盘中的时候，可以使用：</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">git</span> <span class="token function">rm</span> --cached README.md
+</code></pre></div><p>使用 blob 模式来删除大量文件：</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">git</span> <span class="token function">rm</span> log/<span class="token punctuation">\</span>*.log
+</code></pre></div><p>这里有一个反斜杠，为了是不使用 shell 的匹配模式，直接使用 git 的匹配正则。</p> <h3 id="移动文件">移动文件</h3> <p>git 不会显式的跟踪文件的移动操作，git 使用 git mv 命令来移动文件，但是它的实质是</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">mv</span> README.md R.md
+<span class="token function">git</span> <span class="token function">rm</span> README.md
+<span class="token function">git</span> <span class="token function">add</span> R.md
+</code></pre></div><p>的缩写</p> <p>git status 在这两种方法的时候都会记录为 “rename”</p> <div class="language-bash extra-class"><pre class="language-bash"><code>Changes to be committed:
+  <span class="token punctuation">(</span>use <span class="token string">&quot;git reset HEAD &lt;file&gt;...&quot;</span> to unstage<span class="token punctuation">)</span>
+
+    renamed:    README.md -<span class="token operator">&gt;</span> R.md
+</code></pre></div><h2 id="查看提交历史">查看提交历史</h2> <p>提交了很多 commit 以后，回顾一下这个项目的提交历史，我们可以使用 git log。</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">git</span> clone https://github.com/shgopher/dingdang
+
+<span class="token builtin class-name">cd</span> dingdang
+
+<span class="token function">git</span> log
+
+Author: <span class="token function">sh</span> <span class="token operator">&lt;</span>sh@gmail.com<span class="token operator">&gt;</span>
+Date:   Wed Jan <span class="token number">4</span> 01:52:41 <span class="token number">2023</span> +0800
+
+    feat<span class="token punctuation">(</span>git<span class="token punctuation">)</span>:descrip the  basic operate of <span class="token function">git</span>
+
+commit a8d8a2b399f041bda569f7f8ca22e2491dd324dc
+Author: <span class="token function">sh</span> <span class="token operator">&lt;</span>sh@gmail.com<span class="token operator">&gt;</span>
+Date:   Fri Dec <span class="token number">30</span> 01:34:28 <span class="token number">2022</span> +0800
+
+    fix<span class="token punctuation">(</span>.vuepress<span class="token punctuation">)</span>: fix a bug
+
+commit b7a73eb8bd1cca31ef7225e6e4d2cbeb594b3710
+</code></pre></div><p>git log 默认情况下，按照时间顺序列出所有的提交，最新的在最上面，里面的内容有用户，时间，校验和以及提交的说明信息。</p> <p>使用 <code>git log -p -2</code> -p 会显示每次提交所引入的差异 (git diff)，-2 表示只显示两条信息。</p> <p>使用 <code>git log --stat</code> 会显示每次提交的简略性的总结</p> <div class="language-bash extra-class"><pre class="language-bash"><code>commit a32a8f37b5823d8b2b399f28e1746f3a20c0e692 <span class="token punctuation">(</span>HEAD -<span class="token operator">&gt;</span> main, origin/main, origin/HEAD<span class="token punctuation">)</span>
+Author: shgopher <span class="token operator">&lt;</span>shgopher@gmail.com<span class="token operator">&gt;</span>
+Date:   Wed Jan <span class="token number">4</span> 01:52:41 <span class="token number">2023</span> +0800
+
+    feat<span class="token punctuation">(</span>git<span class="token punctuation">)</span>:descrip the  basic operate of <span class="token function">git</span>
+
+ <span class="token string">&quot;git/<span class="token entity" title="\345">\345</span><span class="token entity" title="\237">\237</span><span class="token entity" title="\272">\272</span><span class="token entity" title="\346">\346</span><span class="token entity" title="\234">\234</span><span class="token entity" title="\254">\254</span><span class="token entity" title="\346">\346</span><span class="token entity" title="\223">\223</span><span class="token entity" title="\215">\215</span><span class="token entity" title="\344">\344</span><span class="token entity" title="\275">\275</span><span class="token entity" title="\234">\234</span>/README.md&quot;</span> <span class="token operator">|</span> <span class="token number">164</span> ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-
+ <span class="token number">1</span> <span class="token function">file</span> changed, <span class="token number">163</span> insertions<span class="token punctuation">(</span>+<span class="token punctuation">)</span>, <span class="token number">1</span> deletion<span class="token punctuation">(</span>-<span class="token punctuation">)</span>
+</code></pre></div><p><code>git log --pretty</code> 也是一个很有用的选项，它有很多的参数：</p> <ul><li>oneline 一行输出</li> <li>short</li> <li>full</li> <li>fuller</li> <li><a href="https://git-scm.com/book/zh/v2/Git-%E5%9F%BA%E7%A1%80-%E6%9F%A5%E7%9C%8B%E6%8F%90%E4%BA%A4%E5%8E%86%E5%8F%B2#pretty_format" target="_blank" rel="noopener noreferrer">format<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> 定制输出格式：例如 <code>git log --pretty=format:&quot;%h - %an, %ar : %s&quot;</code></li></ul> <p>这个命令的意思就是使用不同的格式输出 log，比如 oneline：</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">git</span> log --pretty<span class="token operator">=</span>oneline -1
+
+ <span class="token comment"># 在终端上显示的其实就是一行</span>
+a32a8f37b5823d8b2b399f28e1746f3a20c0e692 <span class="token punctuation">(</span>HEAD -<span class="token operator">&gt;</span> main, origin/main, origin/HEAD<span class="token punctuation">)</span> feat<span class="token punctuation">(</span>git<span class="token punctuation">)</span>:descrip the  basic operate of <span class="token function">git</span>
+
+</code></pre></div><p><code>git log --graph</code> 使用图表的方式显示 log：</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">git</span> log --pretty<span class="token operator">=</span>format:<span class="token string">&quot;%h %s&quot;</span> --graph
+* 2d3acf9 ignore errors from SIGCHLD on <span class="token builtin class-name">trap</span>
+*  5e3ee11 Merge branch <span class="token string">'master'</span> of git://github.com/dustin/grit
+<span class="token operator">|</span><span class="token punctuation">\</span>
+<span class="token operator">|</span> * 420eac9 Added a method <span class="token keyword">for</span> getting the current branch.
+* <span class="token operator">|</span> 30e367c <span class="token function">timeout</span> code and tests
+* <span class="token operator">|</span> 5a09431 <span class="token function">add</span> <span class="token function">timeout</span> protection to grit
+* <span class="token operator">|</span> e1193f8 support <span class="token keyword">for</span> heads with slashes <span class="token keyword">in</span> them
+<span class="token operator">|</span>/
+* d6016bc require <span class="token function">time</span> <span class="token keyword">for</span> xmlschema
+*  11d191e Merge branch <span class="token string">'defunkt'</span> into <span class="token builtin class-name">local</span>
+</code></pre></div><p>git log 常用选项：</p> <ul><li><p>-p 按补丁格式显示每个提交引入的差异。</p></li> <li><p>--stat 显示每次提交的文件修改统计信息。</p></li> <li><p>--shortstat 只显示 --stat 中最后的行数修改添加移除统计。</p></li> <li><p>--name-only 仅在提交信息后显示已修改的文件清单。</p></li> <li><p>--name-status 显示新增、修改、删除的文件清单。</p></li> <li><p>--abbrev-commit 仅显示 SHA-1 校验和所有 40 个字符中的前几个字符。</p></li> <li><p>--relative-date 使用较短的相对时间而不是完整格式显示日期 (比如 “2 weeks ago”)。</p></li> <li><p>--graph 在日志旁以 ASCII 图形显示分支与合并历史。</p></li> <li><p>--pretty 使用其他格式显示历史提交信息。可用的选项包括 oneline、short、full、fuller 和 format (用来定义自己的格式)。</p></li> <li><p>--oneline --pretty=oneline --abbrev-commit 合用的简写。</p></li></ul> <h3 id="限制输出长度">限制输出长度</h3> <p>上文我们已经看过了 <code>-2</code> 这种 <code>-n</code> 的限制次数的方式，接下来介绍几种常见的限制输出的方法</p> <p><code>--since</code> <code>--until</code> 其实就是限制的时间，比如：</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">git</span> log --since<span class="token operator">=</span><span class="token number">12</span>.weeks
+</code></pre></div><p>意思就是最近两周的提交，有关这两个命令更多的使用方法可以使用 man git-log 的方式查看</p> <p><code>git log --author</code> 可以限制某个作者的提交</p> <div class="language-bash extra-class"><pre class="language-bash"><code>
+<span class="token function">git</span> log --author<span class="token operator">=</span>lei_lei
+
+commit b5ff3cc5d80fad71b842edbce2c6670b1ff88111
+Author: lei_lei <span class="token operator">&lt;</span><span class="token number">96427312</span>+leilei3167@users.noreply.github.com<span class="token operator">&gt;</span>
+Date:   Mon Oct <span class="token number">31</span> 09:44:15 <span class="token number">2022</span> +0800
+
+    fix: fix spelling error <span class="token punctuation">(</span><span class="token comment">#58)</span>
+    
+    Replace http methods with standard library constants
+</code></pre></div><p><code>git log -s</code> 这是一个过滤器，接受一个字符串最为参数，只过滤含有这个字符串的内容</p> <p>下面列出常见的限制选项：</p> <ul><li><p>-<n> 仅显示最近的 n 条提交。</n></p></li> <li><p>--since， --after 仅显示指定时间之后的提交，如果后面接的是一个具体的时间段，比如 --since=12.weeks 那么意思就是 12 周之内的提交。</p></li> <li><p>--until， --before 仅显示指定时间之前的提交。</p></li> <li><p>--author 仅显示作者匹配指定字符串的提交。</p></li> <li><p>--committer 仅显示提交者匹配指定字符串的提交。</p></li> <li><p>--grep 仅显示提交说明中包含指定字符串的提交。</p></li> <li><p>-S 仅显示添加或删除内容匹配指定字符串的提交。</p></li> <li><p>--no-merges 表示不显示合并提交的历史记录</p></li></ul> <h2 id="撤销操作">撤销操作</h2> <h3 id="撤销操作-2">撤销操作</h3> <p>第一个场景是这样的，当你 add 以后，commit 了，但是发现少 add 了，如果少 add 了，或者是说 commit 写的内容不太满意，我们可以使用 <code>git commit --amend</code> 来追加提交，如果你并未修改内容那么修改的的只是提交的 commit 信息，这次提交的信息会覆盖上次的提交信息。</p> <p>这个操作使用一个新的 commit 取代了老的 commit，目的是不用扰乱 commit 整个的提交历史。</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">git</span> commit -m <span class="token string">&quot;add&quot;</span>
+<span class="token function">git</span> <span class="token function">add</span> README.md
+<span class="token function">git</span> commit --amend -m <span class="token string">&quot;feat(go):add all changes&quot;</span>
+</code></pre></div><h3 id="取消暂存的文件">取消暂存的文件</h3> <p>我们使用 <code>git reset HEAD files</code> 来取消暂存：</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">git</span> reset HEAD README.md
+</code></pre></div><p>就会将位于暂存区的 README.md 文件取消掉</p> <h3 id="撤销对文件的修改">撤销对文件的修改</h3> <p>文件被修改了，当前的状态是已修改但是未放入暂存区域，如何还原成上次提交以后的样子，我们经常会看到这样的提示：</p> <div class="language-bash extra-class"><pre class="language-bash"><code>Changes not staged <span class="token keyword">for</span> commit:
+  <span class="token punctuation">(</span>use <span class="token string">&quot;git add &lt;file&gt;...&quot;</span> to update what will be committed<span class="token punctuation">)</span>
+  <span class="token punctuation">(</span>use <span class="token string">&quot;git checkout -- &lt;file&gt;...&quot;</span> to discard changes <span class="token keyword">in</span> working directory<span class="token punctuation">)</span>
+
+    modified:   README.md
+</code></pre></div><p>根据提示，我们要用的命令是：</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">git</span> checkout -- README.md
+
+</code></pre></div><p>然后我们发现修改已经撤销了，git 会用一个最近的提交去覆盖目前的修改。</p> <p>小知识：git 中被提交的东西都是可以恢复的，但是没有提交的数据丢失以后就真的没有了。</p> <h2 id="远程仓库的使用">远程仓库的使用</h2> <h3 id="查看远程仓库的名称">查看远程仓库的名称</h3> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># 我们克隆一下我们自己在GitHub上的远程服务器 </span>
+<span class="token function">git</span> clone https://github.com/shgopher/dingdang
+
+Cloning into <span class="token string">'dingdang'</span><span class="token punctuation">..</span>.
+remote: Reusing existing pack: <span class="token number">1857</span>, done.
+remote: Total <span class="token number">1857</span> <span class="token punctuation">(</span>delta <span class="token number">0</span><span class="token punctuation">)</span>, reused <span class="token number">0</span> <span class="token punctuation">(</span>delta <span class="token number">0</span><span class="token punctuation">)</span>
+Receiving objects: <span class="token number">100</span>% <span class="token punctuation">(</span><span class="token number">1857</span>/1857<span class="token punctuation">)</span>, <span class="token number">374.35</span> KiB <span class="token operator">|</span> <span class="token number">268.00</span> KiB/s, done.
+Resolving deltas: <span class="token number">100</span>% <span class="token punctuation">(</span><span class="token number">772</span>/772<span class="token punctuation">)</span>, done.
+Checking connectivity<span class="token punctuation">..</span>. done.
+
+<span class="token comment"># 在本地的这个项目的目录下就可以查看远程的服务器名称</span>
+
+<span class="token builtin class-name">cd</span> dingdang
+
+<span class="token function">git</span> remote
+
+origin
+</code></pre></div><p>我们发现远程服务器的名称叫做 “origin” 这个名称也是默认的远程服务器的名称</p> <p>我们使用选项 <code>-v</code> 我们发现出现了下面的内容：</p> <div class="language-bash extra-class"><pre class="language-bash"><code>origin	https://github.com/shgopher/iam <span class="token punctuation">(</span>fetch<span class="token punctuation">)</span>
+origin	https://github.com/shgopher/iam <span class="token punctuation">(</span>push<span class="token punctuation">)</span>
+</code></pre></div><p>你会发现 origin 就只是一个别名而已，它代表了两个 URL，一个是拉取的 URL 一个是 push 的 URL，通常这俩 URL 是一致的，不过你也可以设置成不同的样子。</p> <h3 id="添加远程仓库">添加远程仓库</h3> <p>使用的是 <code>git remote add 简写 url</code> 这样的模式，比如说：</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">git</span> remote <span class="token function">add</span> <span class="token function">sh</span> https://github.com/shgopher/iam
+
+<span class="token function">git</span> remote -v
+
+origin	https://github.com/shgopher/iam <span class="token punctuation">(</span>fetch<span class="token punctuation">)</span>
+origin	https://github.com/shgopher/iam <span class="token punctuation">(</span>push<span class="token punctuation">)</span>
+
+<span class="token function">sh</span>	https://github.com/shgopher/iam <span class="token punctuation">(</span>fetch<span class="token punctuation">)</span>
+<span class="token function">sh</span>	https://github.com/shgopher/iam <span class="token punctuation">(</span>push<span class="token punctuation">)</span>
+</code></pre></div><p>我们使用 <code>git fetch sh</code> 的方式就可以拉取数据：</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># 前提是在这个路径下</span>
+<span class="token function">git</span> fetch <span class="token function">sh</span>
+
+remote: Counting objects: <span class="token number">43</span>, done.
+remote: Compressing objects: <span class="token number">100</span>% <span class="token punctuation">(</span><span class="token number">36</span>/36<span class="token punctuation">)</span>, done.
+remote: Total <span class="token number">43</span> <span class="token punctuation">(</span>delta <span class="token number">10</span><span class="token punctuation">)</span>, reused <span class="token number">31</span> <span class="token punctuation">(</span>delta <span class="token number">5</span><span class="token punctuation">)</span>
+Unpacking objects: <span class="token number">100</span>% <span class="token punctuation">(</span><span class="token number">43</span>/43<span class="token punctuation">)</span>, done.
+From https://github.com/shgopher/iam
+ * <span class="token punctuation">[</span>new branch<span class="token punctuation">]</span>      master     -<span class="token operator">&gt;</span> sh/master
+ * <span class="token punctuation">[</span>new branch<span class="token punctuation">]</span>      dev        -<span class="token operator">&gt;</span> sh/dev
+</code></pre></div><h3 id="从远程服务器中抓取和拉取">从远程服务器中抓取和拉取</h3> <ul><li><p>git fetch：从远程服务器抓取内容，但是不会自动合并。</p></li> <li><p>git pull：从远程服务器抓取内容，并且自动合并到本地</p></li></ul> <p>当我们克隆的时候，实际上 git 还做了这样一个工作：</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">git</span> remote origin URL
+</code></pre></div><p>系统会自动的添加远程仓库的标识，并且简写是 origin</p> <h3 id="推送到远程仓库">推送到远程仓库</h3> <p>我们使用 <code>git push remote branch</code> 这样的命令去推送：</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">git</span> push origin main
+<span class="token comment"># 通常来说远程服务器origin可以自动省略，分支也是可以省略的</span>
+<span class="token function">git</span> push
+</code></pre></div><h3 id="查看远程仓库的详细信息">查看远程仓库的详细信息</h3> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">git</span> remote show origin
+
+<span class="token function">git</span> remote show <span class="token function">sh</span>
+
+ remote <span class="token function">sh</span>
+  Fetch URL: https://github.com/shgopher/iam
+  Push  URL: https://github.com/shgopher/iam
+  HEAD branch: master
+  Remote branches:
+    markdown-strip                   tracked
+    book             new <span class="token punctuation">(</span>next fetch will store <span class="token keyword">in</span> remotes/sh<span class="token punctuation">)</span>
+    feature/refactor new <span class="token punctuation">(</span>next fetch will store <span class="token keyword">in</span> remotes/sh<span class="token punctuation">)</span>
+    master           new <span class="token punctuation">(</span>next fetch will store <span class="token keyword">in</span> remotes/sh<span class="token punctuation">)</span>
+    refs/remotes/origin/issue-11     stale <span class="token punctuation">(</span>use <span class="token string">'git remote prune'</span> to remove<span class="token punctuation">)</span>
+   Local branches configured <span class="token keyword">for</span> <span class="token string">'git pull'</span><span class="token builtin class-name">:</span>
+    master     merges with remote master
+  Local ref configured <span class="token keyword">for</span> <span class="token string">'git push'</span><span class="token builtin class-name">:</span>
+    master pushes to master <span class="token punctuation">(</span>up to <span class="token function">date</span><span class="token punctuation">)</span>
+
+</code></pre></div><p>这里面提示的信息有，</p> <ul><li>远程服务器的简写名称 sh</li> <li>fetch 和 push url</li> <li>HEAD 分支：master</li> <li>远程分支
+<ul><li>tracked 表示这个分支下载到本地被追踪中</li> <li>stale 表示远程仓库这个分支已经弃用了。</li></ul></li> <li>下面还表示那个分支可以直接使用 git pull 可以自动合并这里是 master</li> <li>以及表示自动 push 的这里也是 master</li></ul> <h3 id="远程仓库的重命名和删除">远程仓库的重命名和删除</h3> <p>使用 <code>git remote rename origin tt</code> 去修改远程仓库的简写 origin 为 tt</p> <p>使用 <code>git remote remove tt</code> 去删除远程仓库的一个名字，比如本来有俩名称 tt 和 origin，当你删除 tt 的时候，就只剩下了 origin 了。</p> <h2 id="打标签">打标签</h2> <p>版本是一个很重要的标志，它代表了你的项目中的重要节点，形如：<code>v1.2.1</code></p> <p>使用 <code>git tag</code> 可以输出所有的版本：</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">git</span> tag
+
+v1.0.0
+v1.0.1
+v1.0.10
+v1.0.2
+v1.0.3
+
+</code></pre></div><p>如果想按照特定的模式去查找标签，可以使用 <code>git tag -l &quot;v1.0*&quot;</code> 的方式去寻找</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">git</span> tag -l <span class="token string">&quot;v1.0*&quot;</span>
+
+
+v1.0.0
+v1.0.1
+v1.0.10
+v1.0.2
+v1.0.3
+v1.0.4
+v1.0.5
+v1.0.6
+v1.0.8
+</code></pre></div><p>属于 v1.0 家族的所有版本都会出现</p> <h3 id="创建标签">创建标签</h3> <p>有两种标签形式</p> <ul><li>轻量标签</li> <li>附注标签</li></ul> <p>其中轻量标签是作为临时的标签来使用的，我们通常说的标签都是值得是附注标签</p> <p>创建附注标签：</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># 创建标签</span>
+<span class="token function">git</span> tag -a v1.4.0 -m <span class="token string">&quot;version 1.4.0&quot;</span>
+<span class="token comment"># 显示标签</span>
+<span class="token function">git</span> tag
+
+v1.4.0
+<span class="token comment"># 显示标签详细内容</span>
+<span class="token function">git</span> show v1.4.0
+
+tag v1.4.0
+Tagger: shgopher <span class="token operator">&lt;</span>shgopher@ee.com<span class="token operator">&gt;</span>
+Date:   Sat May <span class="token number">3</span> <span class="token number">20</span>:19:12 <span class="token number">2014</span> -0700
+
+version <span class="token number">1.4</span>.0
+
+commit ca82a6dff817ec66f44342007202690a93763949
+Author: shgopher <span class="token operator">&lt;</span>sg@mail.com<span class="token operator">&gt;</span>
+Date:   Mon Mar <span class="token number">17</span> <span class="token number">21</span>:52:11 <span class="token number">2008</span> -0700
+
+    changed the version number
+</code></pre></div><p>输出了打标签的人，时间，附注的信息，提交的 commit 信息</p> <p>创建临时的轻量标签：</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">git</span> tag v1.4-lw
+
+<span class="token function">git</span> tag 
+
+v1.4
+v1.4-lw
+
+<span class="token function">git</span> show v1.4-lw
+
+commit ca82a6dff817ec66f44342007202690a93763949
+Author: shgpher <span class="token operator">&lt;</span>s@mail.com<span class="token operator">&gt;</span>
+Date:   Mon Mar <span class="token number">17</span> <span class="token number">21</span>:52:11 <span class="token number">2008</span> -0700
+
+    changed the version number
+</code></pre></div><p>临时标签不会显示标签信息，只有 commit 的信息</p> <p>补打标签：</p> <p>可以对过去的 commit 打标签：</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># git tag -a v1.3.0 某次commit的校验和或者是部分校验和</span>
+<span class="token function">git</span> tag -a v1.3.0 9fc3df09
+</code></pre></div><h3 id="上传标签到远程仓库">上传标签到远程仓库</h3> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># git push 远程服务器简写名称 tagname</span>
+<span class="token function">git</span>  push origin v1.5.0
+
+<span class="token comment"># 推送多个tag，使用 git push 远程服务器简写名称 --tags</span>
+
+<span class="token function">git</span> push origin --tags
+</code></pre></div><h3 id="删除标签">删除标签</h3> <p>删除本地的标签：</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">git</span> tag -d v1.4-lw
+
+</code></pre></div><p>从远程服务器删除标签</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># git push 远程仓库名称 --delete 版本名称</span>
+<span class="token function">git</span> push origin --delete v1.4-lw
+</code></pre></div><p>如果要修改旧版本中的某个错误，那么最好的方法是创建一个新的分支</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># git checkout -b &lt;new-branch&gt; [&lt;start-point&gt;]</span>
+<span class="token comment"># 切换分支到 bugv2 ，起点是 v2.0.0</span>
+<span class="token function">git</span> checkout -b bugv2 v2.0.0
+</code></pre></div><p>然后在这个分支提交新的版本即可，比如 v2.0.1 这个时候这个 tag 也不会跟例如 v2.1.0 这种之前的 tag 进行冲突。</p> <h2 id="git-别名">git 别名</h2> <p>我们要在 gitconfig 中设置 alias 选项，通过命令行是这么设置的</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">git</span> config --global alias.a <span class="token function">add</span>
+<span class="token function">git</span> config --global alias.p push
+</code></pre></div><p>如果想让 git 执行外部的命令可以在外部命令前面加上 <code>!</code></p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">git</span> config --global alias.gk <span class="token string">'!gitk'</span>
+</code></pre></div><p>这里 gitk 就是一个外部的 git 协作工作，显然它属于外部命令，那么就需要加上一个 <code>!</code> 就可以了。</p> <p>通常来说设置 git 的 config 的时候不要直接更改 git 的 gitconfig 源文件，使用命令行写入更为稳妥。</p></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/shgopher/dingdang/edit/release/git/基本操作/README.md" target="_blank" rel="noopener noreferrer">在GitHub中编辑</a> <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></div> <div class="last-updated"><span class="prefix">最后更新:</span> <span class="time">3/14/2024, 9:42:14 AM</span></div></footer> <!----> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/dingdang/assets/js/app.77b7e048.js" defer></script><script src="/dingdang/assets/js/2.b9a104ce.js" defer></script><script src="/dingdang/assets/js/13.4531d3e7.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[21],{448:function(t,e,s){"use strict";s.r(e);var n=s(36),i=Object(n.a)({},(function(){var t=this.$createElement,e=this._self._c||t;return e("ContentSlotsDistributor",{attrs:{"slot-key":this.$parent.slotKey}},[e("h1",{attrs:{id:"makfile-的基本概念"}},[this._v("makfile 的基本概念")])])}),[],!1,null,null,null);e.default=i.exports}}]);
